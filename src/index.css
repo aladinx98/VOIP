@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-gradient: linear-gradient(90deg, #e18dff 0%, #3d73ff 96.4%);
+  --primary-color: #e18dff;
+  --secondry1-color: #ab53ea;
+  --secondry-color: #5943e1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: outfit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: outfit;
+  src: url("../src/assets/Outfit-VariableFont_wght.ttf");
+}
+
+.font-outfit {
+  font-family: outfit;
+}
+
+.text-primary-gradient {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.border-gradient {
+  border-image: linear-gradient(90deg, #e18dff 0%, #3d73ff 96.4%);
+  border-image-slice: 1;
+}
+.border-toko {
+  border-top: 1.5px solid #f0f0f0;
+  border-left: 1.5px solid #969696;
+  border-right: 1.5px solid #8f8e8e;
+}
+
+.navcar {
+  position: relative;
+}
+
+.btn2 {
+  display: flex;
+  font-weight: bold;
+  min-width: 120px;
+  height: fit-content;
+  font-size: 16px;
+  padding: 10px 25px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #af4be9 0%, #6626e8 100%);
+}
+.btn2:hover {
+  scale: 1.08;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .navcar::before {
+    content: ""; /* Ensures the pseudo-element is generated */
+    position: absolute;
+    top: -15px;
+    left: 94%;
+    border-bottom: 15px solid #1f2937;
+    border-left: 15px solid transparent;
+
+    /* Add your styles for the ::before element here */
+    width: 10px;
+    height: 10px;
+    /* background-color: red; */
+  }
+}
+
+/* Define scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(35, 1, 65); /* Track color */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(222, 192, 255); /* Thumb color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color); /* Thumb color on hover */
+}
